@@ -3,8 +3,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
 
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from profile_api import serializers
+from profile_api import models
+from profile_api import permissions
 
 
 class HelloApiView(APIView):
@@ -73,7 +77,6 @@ class HelloViewSet(viewsets.ViewSet):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
     def retrive(self, request, pk=None):
         return Response({'method': request.method, 'data': request.data}, status=status.HTTP_200_OK)
 
@@ -85,3 +88,10 @@ class HelloViewSet(viewsets.ViewSet):
 
     def destroy(self, request, pk=None):
         return Response({'method': request.method, 'data': request.data}, status=status.HTTP_200_OK)
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (permissions.UpdateOwnProfilePermission,)
+    serializer_class = serializers.UserProfileSerializer
+    queryset = models.UserProfile.objects.all()

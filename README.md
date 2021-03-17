@@ -59,3 +59,10 @@ from profile_api import models
 
 admin.site.register(models.UserProfile)
 ```
+
+
+# Popular packages to look into 
+
+
+Django Database Models [django.db.models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
+

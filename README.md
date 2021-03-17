@@ -61,8 +61,22 @@ admin.site.register(models.UserProfile)
 ```
 
 
-# Popular packages to look into 
 
+# Commands to deploy to AWS
+
+After ssh into ubuntu image on aws run below command.
+
+```python
+ curl -sL  https://raw.githubusercontent.com/ravindra-gadiparthi/profile-rest-api/main/deploy/setup.sh  | sudo bash -
+```
+
+Note: update allowed hosts with ec2 hostname
+
+```python
+ALLOWED_HOSTS = ['ec2-13-127-54-108.ap-south-1.compute.amazonaws.com', 'localhost']
+```
+
+# Popular packages to look into 
 
 Django Database Models [django.db.models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
 

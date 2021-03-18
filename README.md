@@ -80,3 +80,11 @@ ALLOWED_HOSTS = ['ec2-13-127-54-108.ap-south-1.compute.amazonaws.com', 'localhos
 
 Django Database Models [django.db.models](https://docs.djangoproject.com/en/3.1/topics/db/models/)
 
+## Generating SSH Key pair and importing to Github Account
+
+ 
+ [Generating SSH Key Pair](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+ 
+ [Importing key pair to Github Account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
+ 
+ [Testing connection to github](https://docs.github.com/en/github/authenticating-to-github/testing-your-ssh-connection)
